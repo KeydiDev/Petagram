@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top">20dp</dimen>
+    <dimen name="left">10dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
+    <dimen name="nombre_cardview">20sp</dimen>
+    <dimen name="elevation_actionbar">4dp</dimen>
+    <dimen name="linear_Height">50dp</dimen>
+
+</resources>

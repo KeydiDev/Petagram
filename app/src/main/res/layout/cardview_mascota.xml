@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota"
+    card_view:cardCornerRadius="@dimen/corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/image"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/button_bone"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/linear_Height"
+                android:layout_marginRight="10dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/image"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                card_view:srcCompat="@mipmap/bone"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="120dp"
+                android:layout_height="@dimen/linear_Height"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/nombre"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvRaiting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/_10"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivBoneYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/linear_Height"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/image"
+                android:cropToPadding="true"
+                android:scaleType="fitXY"
+                card_view:srcCompat="@mipmap/bone_yellow"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
