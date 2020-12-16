@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.keydi.petagram.adapter.MascotaAdapter;
+import com.keydi.petagram.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class Favoritas extends AppCompatActivity {

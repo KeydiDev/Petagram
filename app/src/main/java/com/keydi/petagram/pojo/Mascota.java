@@ -1,4 +1,4 @@
-package com.keydi.petagram;
+package com.keydi.petagram.pojo;
 
 import java.util.Date;
 

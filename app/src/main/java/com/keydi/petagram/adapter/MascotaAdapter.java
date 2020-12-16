@@ -1,4 +1,4 @@
-package com.keydi.petagram;
+package com.keydi.petagram.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.keydi.petagram.pojo.Mascota;
+import com.keydi.petagram.R;
 
 import java.util.ArrayList;
 

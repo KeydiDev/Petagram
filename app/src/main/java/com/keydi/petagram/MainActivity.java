@@ -2,37 +2,46 @@ package com.keydi.petagram;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
+
+import com.google.android.material.tabs.TabLayout;
+import com.keydi.petagram.adapter.MascotaAdapter;
+import com.keydi.petagram.adapter.PageAdapter;
+import com.keydi.petagram.fragment.PerfilFragment;
+import com.keydi.petagram.fragment.RecyclerViewFragment;
+import com.keydi.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotas;
+    private Toolbar miActionBar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar miActionBar = findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);
+        miActionBar = findViewById(R.id.miActionBar);
+        if (miActionBar != null){
+            setSupportActionBar(miActionBar);
+        }
 
-        listaMascotas = findViewById(R.id.rvMascotas);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(RecyclerView.VERTICAL);
-        listaMascotas.setLayoutManager(llm); // el recycle se comporte como LinearLayout
-        inicializarListaMascota();
-        inicializarAdaptador();
+        tabLayout = findViewById(R.id.tabLayout);
+        viewPager = findViewById(R.id.viewPager);
+
+        setUpViewPager();
     }
 
     @Override
@@ -49,27 +58,34 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonFav:
                 Intent intent = new Intent(MainActivity.this, Favoritas.class);
                 startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+                break;
+            case R.id.menu_contacto:
+                Intent intentContacto = new Intent(MainActivity.this, ContactoActivity.class);
+                startActivity(intentContacto);
+                break;
+            case R.id.menu_about:
+                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/"));
+                startActivity(in);
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 
-    public void inicializarAdaptador(){
-        MascotaAdapter adapter = new MascotaAdapter(mascotas, this);
-        listaMascotas.setAdapter(adapter);
+    private ArrayList<Fragment> agregarFragments(){
+       ArrayList<Fragment> fragments = new ArrayList<>();
+
+       fragments.add(new RecyclerViewFragment());
+       fragments.add(new PerfilFragment());
+
+       return fragments;
     }
 
-    public void inicializarListaMascota(){
-        mascotas = new ArrayList<Mascota>();
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
 
-        mascotas.add(new Mascota("bob", 1, R.drawable.cachorro));
-        mascotas.add(new Mascota("pluto", 3, R.drawable.mascota1));
-        mascotas.add(new Mascota("kitty", 5, R.drawable.mascota2));
-        mascotas.add(new Mascota("rocco", 2, R.drawable.mascota1));
-        mascotas.add(new Mascota("tico", 1, R.drawable.mascota2));
-
+        tabLayout.getTabAt(0).setIcon(R.drawable.blue_home_icon);
+        tabLayout.getTabAt(1).setIcon(R.drawable.cat_icon);
     }
-
 
 }

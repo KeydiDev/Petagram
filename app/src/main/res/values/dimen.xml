@@ -6,5 +6,8 @@
     <dimen name="nombre_cardview">20sp</dimen>
     <dimen name="elevation_actionbar">4dp</dimen>
     <dimen name="linear_Height">50dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="padding_left">20dp</dimen>
+    <dimen name="space">15dp</dimen>
 
 </resources>

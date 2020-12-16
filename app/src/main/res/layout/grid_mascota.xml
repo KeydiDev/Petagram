@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota"
+    card_view:cardCornerRadius="@dimen/corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imgFotoGrid"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/image"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRatGrid"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/linear_Height"
+                android:layout_weight="1"
+                android:text="@string/nombre"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/button_bone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/image"
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                card_view:srcCompat="@mipmap/bone"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

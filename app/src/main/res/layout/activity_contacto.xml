@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactoActivity">
+
+    <include
+        android:id="@+id/miActionBar"
+        layout="@layout/actionbar"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/miActionBar"
+        android:layout_marginTop="50dp"
+        android:padding="@dimen/padding_left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_nombre"
+            android:textSize="18sp"
+            android:layout_margin="@dimen/space"
+            android:layout_alignBottom="@id/tilayout"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/label_name"
+            android:layout_toEndOf="@id/label_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_email"
+            android:textSize="18sp"
+            android:layout_margin="@dimen/space"
+            android:layout_below="@id/label_name"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/label_email"
+            android:layout_alignLeft="@id/tilayout"
+            android:layout_alignStart="@id/tilayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/label_msj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_msj"
+            android:layout_marginTop="50dp"
+            android:textSize="18sp"
+            android:layout_marginLeft="@dimen/space"
+            android:layout_below="@id/tilayout2"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/space" />
+
+        <EditText
+            android:id="@+id/editTextMultiLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_msj"
+            android:layout_alignStart="@+id/label_email"
+            android:layout_alignLeft="@+id/label_email"
+            android:layout_alignEnd="@+id/tilayout2"
+            android:layout_alignRight="@+id/tilayout2"
+            android:ems="10"
+            android:labelFor="@id/label_msj"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btn_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_enviar" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

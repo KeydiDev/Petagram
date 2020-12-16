@@ -8,4 +8,14 @@
         app:showAsAction="always"
         android:title="title"></item>
 
+    <item
+        android:id="@+id/menu_contacto"
+        android:title="@string/menu_contacto"
+        android:orderInCategory="100"></item>
+
+    <item
+        android:id="@+id/menu_about"
+        android:title="@string/menu_about"
+        android:orderInCategory="101"></item>
+
 </menu>
