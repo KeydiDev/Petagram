@@ -46,8 +46,8 @@ public class ContactoActivity extends AppCompatActivity {
         btn_enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new SendMailTask(ContactoActivity.this).execute("email@gmail.com",
-                        "xxxx", to, "emailSubject", et_mensaje.getText().toString());
+                new SendMailTask(ContactoActivity.this).execute("poneremail@gmail.com",
+                        "ponerpassword", to, "emailSubject", et_mensaje.getText().toString());
             }
         });
 

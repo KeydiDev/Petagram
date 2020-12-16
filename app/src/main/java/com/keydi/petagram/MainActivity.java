@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentContacto);
                 break;
             case R.id.menu_about:
-                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/"));
-                startActivity(in);
+                Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intentAbout);
                 break;
         }
         return super.onOptionsItemSelected(item);

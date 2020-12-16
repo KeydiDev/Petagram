@@ -34,4 +34,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Rayitas">Rayitas</string>
     <string name="todo">TODO</string>
+    <string name="name">Keydi Developer</string>
+    <string name="from">From Uruguay</string>
 </resources>
