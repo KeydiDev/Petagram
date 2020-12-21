@@ -7,7 +7,7 @@
     <string name="ptelefono">Telefono</string>
     <string name="image">image</string>
     <string name="nombre">nombre</string>
-    <string name="_10">10</string>
+    <string name="_0">0</string>
     <string-array name="planetas">
         <item>Mercurio</item>
         <item>Venus</item>

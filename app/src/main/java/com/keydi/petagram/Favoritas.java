@@ -8,13 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.keydi.petagram.adapter.MascotaAdapter;
+import com.keydi.petagram.db.BaseDatos;
 import com.keydi.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Favoritas extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotasFavoritas;
+    List<Mascota> mascotasFavoritas;
     private RecyclerView listaMascotas;
 
     @Override
@@ -40,14 +42,8 @@ public class Favoritas extends AppCompatActivity {
     }
 
     public void inicializarListaMascota(){
-        mascotasFavoritas = new ArrayList<Mascota>();
-
-
-        mascotasFavoritas.add(new Mascota("pluto", 3, R.drawable.mascota1));
-        mascotasFavoritas.add(new Mascota("kitty", 5, R.drawable.mascota2));
-        mascotasFavoritas.add(new Mascota("bob", 1, R.drawable.cachorro));
-        mascotasFavoritas.add(new Mascota("rocco", 2, R.drawable.mascota1));
-        mascotasFavoritas.add(new Mascota("tico", 1, R.drawable.mascota2));
+        BaseDatos db = new BaseDatos(this);
+        mascotasFavoritas = db.obtenerTodasLasFavoritas();
 
     }
 }

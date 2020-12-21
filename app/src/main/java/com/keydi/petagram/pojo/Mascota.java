@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Mascota {
 
+    private int id;
     private String nombre;
     private int raiting;
     private int foto;
@@ -12,6 +13,10 @@ public class Mascota {
         this.nombre = nombre;
         this.raiting = raiting;
         this.foto = foto;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {
@@ -36,5 +41,13 @@ public class Mascota {
 
     public void setRaiting(int raiting) {
         this.raiting = raiting;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
